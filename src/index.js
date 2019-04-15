@@ -2,7 +2,11 @@ import APIRegister from './apiRegister';
 
 const registerInstance = new APIRegister();
 
-function responseProfilingCollector(axiosConfig) {
+export function getAPIProfileData() {
+	return registerInstance.getRegister();
+}
+
+export function responseProfilingCollector(axiosConfig) {
 	if (!axiosConfig.config.ignoreApiProfiling) {
 		const profilingData = registerInstance.completeApiProfiling(axiosConfig);
 
@@ -14,7 +18,7 @@ function responseProfilingCollector(axiosConfig) {
 	return axiosConfig;
 }
 
-function requestProfilingMarker(axiosConfig) {
+export function requestProfilingMarker(axiosConfig) {
 	if (!axiosConfig.ignoreApiProfiling) {
 		registerInstance.addAPIForProfiling(axiosConfig);
 	}
