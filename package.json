@@ -1,19 +1,55 @@
 {
-  "name": "axios-api-profiler",
-  "version": "0.0.1",
-  "description": "Axios interceptor that profiles HTTP responses",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/axios-api-profiler.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/anubhavsrivastava/axios-api-profiler/issues"
-  },
-  "homepage": "https://github.com/anubhavsrivastava/axios-api-profiler#readme"
+	"name": "axios-api-profiler",
+	"version": "0.0.1",
+	"description": "Axios interceptor that profiles HTTP responses",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "webpack --watch",
+		"build": "webpack",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage",
+		"coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/anubhavsrivastava/axios-api-profiler.git"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"keywords": [
+		"axios",
+		"middleware",
+		"axios-ecosystem",
+		"axios-middleware",
+		"axios-rest",
+		"axios-instance",
+		"axios-plugin"
+	],
+	"author": {
+		"name": "Anubhav Srivastava",
+		"email": "anubhav.srivastava00@gmail.com"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/anubhavsrivastava/axios-api-profiler/issues"
+	},
+	"homepage": "https://github.com/anubhavsrivastava/axios-api-profiler#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.4.3",
+		"@babel/core": "^7.4.3",
+		"@babel/plugin-transform-runtime": "^7.4.3",
+		"@babel/preset-env": "^7.4.3",
+		"@babel/preset-stage-0": "^7.0.0",
+		"@babel/preset-stage-1": "^7.0.0",
+		"@babel/preset-stage-2": "^7.0.0",
+		"@babel/preset-stage-3": "^7.0.0",
+		"@babel/runtime": "^7.4.3",
+		"babel-loader": "^8.0.5",
+		"coveralls": "^3.0.3",
+		"jest": "^24.7.1",
+		"webpack": "^4.29.6",
+		"webpack-cli": "^3.3.0"
+	}
 }
