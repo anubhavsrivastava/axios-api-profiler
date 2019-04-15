@@ -1,0 +1,19 @@
+{
+  "name": "axios-api-profiler",
+  "version": "0.0.1",
+  "description": "Axios interceptor that profiles HTTP responses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anubhavsrivastava/axios-api-profiler.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anubhavsrivastava/axios-api-profiler/issues"
+  },
+  "homepage": "https://github.com/anubhavsrivastava/axios-api-profiler#readme"
+}
