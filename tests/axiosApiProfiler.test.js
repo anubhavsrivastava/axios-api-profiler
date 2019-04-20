@@ -1,17 +1,12 @@
 import APIRegister from '../src/apiRegister';
+import axiosRequestProfiler, { APIProfiler } from '../src/index';
 
-jest.mock('../src/apiRegister', () => {
-	return jest.fn().mockImplementation(() => {
-		return { getRegister: jest.fn() };
-	});
-});
-import axiosRequestProfiler, { getAPIProfileData, responseProfilingCollector, requestProfilingMarker } from '../src/index';
-
-beforeEach(() => {
-	APIRegister.mockClear();
-});
+jest.mock('../src/apiRegister');
 
 describe('axios interceptor - api profiler', () => {
+	beforeEach(() => {
+		APIRegister.mockClear();
+	});
 	test('should add itself in interceptor chain of axios', () => {
 		let axiosMock = {
 			interceptors: {
@@ -23,12 +18,27 @@ describe('axios interceptor - api profiler', () => {
 				}
 			}
 		};
+
 		axiosRequestProfiler(axiosMock);
-		expect(axiosMock.interceptors.request.use).toBeCalledWith(requestProfilingMarker);
-		expect(axiosMock.interceptors.response.use).toBeCalledWith(responseProfilingCollector);
+		expect(axiosMock.interceptors.request.use).toBeCalled();
+		expect(axiosMock.interceptors.response.use).toBeCalled();
 	});
 
-	test('should get all API Profiling data', () => {});
+	test('should get all API Profiling data', () => {
+		// mockClear() is working:
+		expect(APIRegister).not.toHaveBeenCalled();
+
+		const apiProfilerInstance = new APIProfiler();
+		// Constructor should have been called again:
+		expect(APIRegister).toHaveBeenCalledTimes(1);
+
+		apiProfilerInstance.getAPIProfileData();
+		const mockAPIRegisterInstance = APIRegister.mock.instances[0];
+		console.log(mockAPIRegisterInstance);
+		const mockGetRegister = mockAPIRegisterInstance.getRegister;
+		expect(mockGetRegister).toHaveBeenCalledWith();
+		expect(mockGetRegister).toHaveBeenCalledTimes(1);
+	});
 
 	test('should mark an api for profiling', () => {});
 
