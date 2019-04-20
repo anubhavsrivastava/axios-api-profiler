@@ -13,7 +13,7 @@ export class APIProfiler {
 			const profilingData = this.registerInstance.completeApiProfiling(axiosConfig);
 
 			if (!axiosConfig.config.ignoreApiProfilingLogs) {
-				console.log('%c Request Profile:', 'color: #4CAF50; font-weight: bold', ` ${profilingData.config.config.url} [${profilingData.config.request.status}] took ${profilingData['endTime'] - profilingData['startTime']} ms`);
+				profilingData ? console.log('%c Request Profile:', 'color: #4CAF50; font-weight: bold', ` ${profilingData.config.config.url} [${profilingData.config.request.status}] took ${profilingData['endTime'] - profilingData['startTime']} ms`) : console.log('No Profiling Data');
 			}
 		}
 
