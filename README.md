@@ -18,7 +18,7 @@ Axios interceptor that profiles HTTP responses for timings
 
 ## Introduction
 
-Axios data unpacker is interceptor for axios that unpacks `data` from axios standard response and makes API response content to be called so that one can focus on actual response.
+Axios API Profiler is interceptor for axios that profiles for time each axios based call takes including network time + axios handling time (including middleware time)
 
 ## Profiling info
 
