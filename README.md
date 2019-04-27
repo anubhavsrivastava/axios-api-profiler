@@ -38,7 +38,9 @@ yarn add axios-api-profiler
 
 ## Usage
 
-### Configuration
+Import `axiosRequestProfiler` to register middleware for axios that will profile all APIs. 
+
+## Configuration
 
 ---
 
