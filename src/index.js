@@ -29,7 +29,7 @@ export class APIProfiler {
 	}
 }
 
-const defaultApiProfilerInstance = new APIProfiler();
+export const defaultApiProfilerInstance = new APIProfiler();
 
 export default function axiosRequestProfiler(axios) {
 	axios.interceptors.request.use(defaultApiProfilerInstance.requestProfilingMarker);
