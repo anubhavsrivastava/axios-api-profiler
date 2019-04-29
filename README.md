@@ -48,6 +48,8 @@ Import `axiosRequestProfiler` to register it as interceptor for axios that will 
     // ... middleware chain
     axiosRequestProfiler(axios)
 
+`axiosRequestProfiler` function also accepts instance of axios as its parameter.
+
 ## Configuration
 
 ---
