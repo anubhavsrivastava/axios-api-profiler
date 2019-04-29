@@ -38,7 +38,15 @@ yarn add axios-api-profiler
 
 ## Usage
 
-Import `axiosRequestProfiler` to register middleware for axios that will profile all APIs. 
+Import `axiosRequestProfiler` to register it as interceptor for axios that will profile all APIs.
+
+### Simple usage
+
+    import axios from 'axios';
+    import {axiosRequestProfiler} from 'axios-api-profiler';
+
+    // ... middleware chain
+    axiosRequestProfiler(axios)
 
 ## Configuration
 
