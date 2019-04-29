@@ -59,6 +59,25 @@ One can disable this interceptor by passing `ignoreApiProfiling` as configuratio
 | ignoreApiProfiling     | `Boolean` | Flag to disable profiling                               | `false`       |
 | ignoreApiProfilingLogs | `Boolean` | Flag to disable `console` logging of API profile timing | `false`       |
 
+1. To disable profiling for specific call
+
+
+        axios.get('/users', { ignoreApiProfiling;:true } ).then(response=>{
+            //response is standard axios response with config, header, status, data, statusText
+        })
+
+    This config as parameter is available for all calls(get, post, put, etc) in axios, refer [here](https://www.npmjs.com/package/axios#request-method-aliases).
+
+2.  To disable interceptor for all calls of a instance (if already configured as interceptor in axios default configuration)
+
+        const instance = axios.create({ignoreApiProfiling: true});
+
+3.  To continue profiling and not log timing on `console`, use `ignoreApiProfilingLogs` flag,
+
+        axios.get('/users', { ignoreApiProfilingLogs;:true } ).then(response => {
+            //api timing wont be logged on console
+        })
+
 ---
 
 ## Contribution
