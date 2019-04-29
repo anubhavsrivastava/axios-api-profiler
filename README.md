@@ -52,6 +52,13 @@ Import `axiosRequestProfiler` to register it as interceptor for axios that will 
 
 ## Configuration
 
+One can disable this interceptor by passing `ignoreApiProfiling` as configuration in axios instance or per axios api call. This configuration can also be set on `axios.default` object.
+
+| Setting Name           | type      | description                                             | default value |
+| ---------------------- | --------- | ------------------------------------------------------- | ------------- |
+| ignoreApiProfiling     | `Boolean` | Flag to disable profiling                               | `false`       |
+| ignoreApiProfilingLogs | `Boolean` | Flag to disable `console` logging of API profile timing | `false`       |
+
 ---
 
 ## Contribution
