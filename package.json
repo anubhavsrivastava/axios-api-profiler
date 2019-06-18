@@ -1,6 +1,6 @@
 {
 	"name": "axios-api-profiler",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"description": "Axios interceptor that profiles HTTP responses",
 	"main": "dist/index.js",
 	"scripts": {
