@@ -22,7 +22,7 @@ Axios API Profiler is interceptor for axios that profiles for time each axios ba
 
 ## Profiling info
 
-API profilong is only for time. This includes time taken by axios to process the request and network time.
+API profiling is only for time. This includes time taken by axios to process the request and network time.
 
 ## Install
 
