@@ -74,7 +74,7 @@ One can disable this interceptor by passing `ignoreApiProfiling` as configuratio
 
 3.  To continue profiling and not log timing on `console`, use `ignoreApiProfilingLogs` flag,
 
-        axios.get('/users', { ignoreApiProfilingLogs;:true } ).then(response => {
+        axios.get('/users', { ignoreApiProfilingLogs:true } ).then(response => {
             //api timing wont be logged on console
         })
 
