@@ -62,7 +62,7 @@ One can disable this interceptor by passing `ignoreApiProfiling` as configuratio
 1. To disable profiling for specific call
 
 
-        axios.get('/users', { ignoreApiProfiling;:true } ).then(response=>{
+        axios.get('/users', { ignoreApiProfiling:true } ).then(response=>{
             //response is standard axios response with config, header, status, data, statusText
         })
 
