@@ -80,6 +80,8 @@ You can get all profiled information (of same instance) via `defaultApiProfilerI
 
 ![All records](./img/records.png)
 
+`startTime` and `endTime` are instance of Date.
+
 ## Configuration
 
 One can disable this interceptor by passing `ignoreApiProfiling` as configuration in axios instance or per axios api call. This configuration can also be set on `axios.default` object.
