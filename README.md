@@ -43,12 +43,42 @@ Import `axiosRequestProfiler` to register it as interceptor for axios that will 
 ### Simple usage
 
     import axios from 'axios';
-    import {axiosRequestProfiler} from 'axios-api-profiler';
+    import axiosRequestProfiler from 'axios-api-profiler';
 
     // ... middleware chain
     axiosRequestProfiler(axios)
 
 `axiosRequestProfiler` function also accepts instance of axios as its parameter.
+By default, Profiling information is logged in the console. (browser or node)
+
+#### Node
+
+![On Node](./img/node.png)
+
+#### Browser
+
+![On Node](./img/browser.png)
+
+### Fetching all profiling information
+
+You can get all profiled information (of same instance) via `defaultApiProfilerInstance.getAPIProfileData()`
+
+    import axios from 'axios';
+    import axiosRequestProfiler, { defaultApiProfilerInstance } from 'axios-api-profiler';
+
+    // ... middleware chain
+    axiosRequestProfiler(axios);
+    // stop default console loggin
+    axios.defaults.ignoreApiProfilingLogs = true;
+
+
+    axios.get('/user);
+    //other axios call over a period of time
+
+    const profileInfomation = defaultApiProfilerInstance.getAPIProfileData();
+    console.table(profileInformation, ["startTime", "endTime"]);
+
+![All records](./img/records.png)
 
 ## Configuration
 
