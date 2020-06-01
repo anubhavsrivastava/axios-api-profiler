@@ -1,0 +1,19 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd browser && parcel index.html",
+    "build": "cd browser && parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2"
+  }
+}
