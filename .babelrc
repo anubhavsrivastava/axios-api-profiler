@@ -1,11 +1,12 @@
 {
-	"presets": ["@babel/env"],
-	"plugins": [
-		[
-			"@babel/plugin-transform-runtime",
-			{
-				"regenerator": true
-			}
-		]
-	]
+    "presets": ["@babel/env"],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "regenerator": true
+            }
+        ]
+    ]
 }
